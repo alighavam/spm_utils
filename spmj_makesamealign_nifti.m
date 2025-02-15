@@ -9,19 +9,19 @@ function spmj_makesamealign_nifti(P,Q)
 % Input:
 %   P: name, vol-structure, or affine transformation matrix of the source image 
 %   Q: Char-array of imagenames of the 4d-nifti files to apply the affine
-%   matrix to. 
-if (nargin<1 || isempty(P)) 
-    P=spm_select(1,'image','Select Image for orientation info'); 
+%   matrix to.
+if (nargin<1 || isempty(P))
+    P=spm_select(1,'image','Select Image for orientation info');
 end; 
-if (nargin<2 || isempty(Q)) 
-    Q=spm_select(inf,'image','Select Images to make equal'); 
-end; 
+if (nargin<2 || isempty(Q))
+    Q=spm_select(inf,'image','Select Images to make equal');
+end;
 if (isnumeric(P))
     VP.mat=P;
 elseif (isstruct(P))
-    VP=P; 
-else     
-    VP=spm_vol(P); 
+    VP=P;
+else
+    VP=spm_vol(P);
 end; 
 
 fprintf('First Image:\n');
